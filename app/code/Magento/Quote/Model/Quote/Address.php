@@ -1073,6 +1073,7 @@ class Address extends AbstractAddress implements
         $baseSubtotalInclTax = $this->getBaseSubtotalTotalInclTax();
         $request->setBaseSubtotalInclTax($baseSubtotalInclTax);
         $request->setBaseSubtotalWithDiscountInclTax($this->getBaseSubtotalWithDiscount() + $this->getBaseTaxAmount());
+        $request->setValueWithDiscount($this->getBaseSubtotalWithDiscount());
 
         $result = $this->_rateCollector->create()->collectRates($request)->getResult();
 
