@@ -519,6 +519,7 @@ class Shipping implements RateCollectorInterface
         $request->setLimitCarrier($limitCarrier);
 
         $request->setBaseSubtotalInclTax($address->getBaseSubtotalInclTax());
+        $request->setValueWithDiscount($address->getBaseSubtotalWithDiscount());
 
         return $this->collectRates($request);
     }
